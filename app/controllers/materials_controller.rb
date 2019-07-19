@@ -1,4 +1,4 @@
-class Materials < ApplicationController
+class MaterialsController < ApplicationController
 
   def index
     conn = Faraday.new(
