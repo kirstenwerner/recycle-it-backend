@@ -10,16 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_19_221830) do
+ActiveRecord::Schema.define(version: 2019_07_24_045540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "center_material", force: :cascade do |t|
+    t.integer "recycle_center_id"
+    t.integer "material_id"
+  end
+
   create_table "materials", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "material_id"
+  end
+
+  create_table "recycle_centers", force: :cascade do |t|
+    t.string "name"
+    t.float "longitude"
+    t.float "latitude"
+    t.string "location_id"
+    t.string "zip_code"
+    t.string "city"
+    t.string "state"
+    t.string "phone_number"
+    t.string "hours"
+    t.string "address"
+  end
+
+  create_table "zip_long_lats", force: :cascade do |t|
+    t.string "zip_code"
+    t.float "longitude"
+    t.float "latitude"
   end
 
 end
