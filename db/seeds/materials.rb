@@ -11,6 +11,7 @@ materials = JSON.parse(resp.body)["result"]
 materials.each do |material|
   Material.create!(
     name: material["description"],
-    description: material["long_description"]
+    description: material["long_description"],
+    material_id: material["material_id"]
   )
 end
