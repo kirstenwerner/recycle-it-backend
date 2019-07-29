@@ -34,7 +34,7 @@ class RecycleCenter < ApplicationRecord
       @recycle_centers.push(recycle_center)
     end
 
-    # RecycleCenter.fill_in_center_details(@recycle_centers)
+    RecycleCenter.fill_in_center_details(@recycle_centers)
   end
 
   def self.get_recycle_center_details(center)
