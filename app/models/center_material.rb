@@ -1,0 +1,2 @@
+class CenterMaterial < ApplicationRecord 
+end
